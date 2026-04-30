@@ -189,4 +189,4 @@ Rủi ro nếu chỉ validate frontend:
 - Có thể bị tấn công injection nếu backend không kiểm tra lại  
 
 ---
-
+LINK VIDEO PBT_02:https://www.youtube.com/watch?v=w2VmKwdc-Pw&t=65s
