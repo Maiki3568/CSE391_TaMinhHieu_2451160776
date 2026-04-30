@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+</head>
+<body>
+
+  <h1>Form Đặt hàng</h1>
+
+  <h2>Giỏ hàng</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Sản phẩm</th>
+        <th>Đơn giá</th>
+        <th>Số lượng</th>
+        <th>Thành tiền</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Tai nghe Pro</td>
+        <td>500000</td>
+        <td>1</td>
+        <td>500000</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Đồng hồ thông minh</td>
+        <td>1200000</td>
+        <td>1</td>
+        <td>1200000</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Loa Bluetooth</td>
+        <td>700000</td>
+        <td>1</td>
+        <td>700000</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">Tổng cộng</td>
+        <td>2400000</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <h2>Form thanh toán</h2>
+  <form>
+    <p>Phương thức thanh toán:</p>
+    <input type="radio" name="payment" value="cod" required> COD
+    <input type="radio" name="payment" value="bank"> Chuyển khoản
+    <input type="radio" name="payment" value="ewallet"> Ví điện tử
+
+    <br><br>
+
+    <label>Mã giảm giá:</label>
+    <input type="text" pattern="SALE[0-9]{4}" title="SALE + 4 chữ số">
+
+    <br><br>
+
+    <label>Ghi chú:</label><br>
+    <textarea rows="4" cols="40"></textarea>
+
+    <h2>Thông tin giao hàng</h2>
+
+    <label>Ngày giao hàng mong muốn:</label>
+    <input type="date" min="2026-05-01" required>
+
+    <br><br>
+
+    <label>Khung giờ:</label>
+    <select required>
+      <option value="">--Chọn--</option>
+      <option>Sáng 8-12h</option>
+      <option>Chiều 14-18h</option>
+      <option>Tối 18-21h</option>
+    </select>
+
+    <br><br>
+
+    <label>Thời gian giao hàng (ngày):</label>
+    <input type="range" min="1" max="7" step="1">
+
+    <br><br>
+
+    <button type="submit" aria-label="Xác nhận đặt hàng">Đặt hàng</button>
+  </form>
+
+</body>
+</html>
