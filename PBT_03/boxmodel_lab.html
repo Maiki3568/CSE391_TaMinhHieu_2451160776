@@ -10,15 +10,13 @@
 
     <h1>Bài B2 — Box Model Lab</h1>
 
-    <!-- ==========================
-         PHẦN 1: content-box vs border-box
-         ========================== -->
+  
     <section class="demo-section">
         <h2>Phần 1 — content-box vs border-box</h2>
         <p class="note">Cả 2 hộp đều có <code>width: 300px, padding: 20px, border: 5px solid</code></p>
 
         <div class="boxes-wrapper">
-            <!-- Hộp 1: content-box -->
+       
             <div class="box box-content-box">
                 <strong>Hộp 1 — content-box</strong>
                 <br><br>
@@ -29,7 +27,6 @@
                 <em>Thực tế: 300 + 40 + 10 = <strong>350px</strong></em>
             </div>
 
-            <!-- Hộp 2: border-box -->
             <div class="box box-border-box">
                 <strong>Hộp 2 — border-box</strong>
                 <br><br>
@@ -41,7 +38,7 @@
             </div>
         </div>
 
-        <!-- Thước đo trực quan -->
+        
         <div class="ruler-section">
             <div class="ruler-label">← content-box chiếm 350px →</div>
             <div class="ruler content-box-ruler"></div>
@@ -58,14 +55,12 @@
         </div>
     </section>
 
-    <!-- ==========================
-         PHẦN 2: Layout 3 cột
-         ========================== -->
+   
     <section class="demo-section">
         <h2>Phần 2 — Layout 3 cột (1000px container)</h2>
 
-        <!-- TRƯỜNG HỢP A: KHÔNG dùng border-box → VỠ -->
-        <h3 class="case-title bad">❌ Trường hợp A: KHÔNG dùng border-box (layout vỡ)</h3>
+      
+        <h3 class="case-title bad"> Trường hợp A: KHÔNG dùng border-box (layout vỡ)</h3>
         <p class="note">
             Sidebar thực tế: 250 + 30 + 0 = 280px |
             Content thực tế: 500 + 40 = 540px |
@@ -94,13 +89,13 @@
         </div>
         <div class="clearfix"></div>
 
-        <!-- TRƯỜNG HỢP B: Dùng border-box → ĐÚNG -->
-        <h3 class="case-title good">✅ Trường hợp B: CÓ border-box (layout đúng)</h3>
+       
+        <h3 class="case-title good"> Trường hợp B: CÓ border-box (layout đúng)</h3>
         <p class="note">
             Sidebar: 250px |
             Content: 500px |
             Ads: 250px |
-            Tổng: <strong>1000px ✅</strong>
+            Tổng: <strong>1000px </strong>
         </p>
         <div class="container-fixed">
             <div class="sidebar-fixed">
