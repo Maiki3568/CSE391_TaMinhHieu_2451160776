@@ -1,7 +1,4 @@
-/* ====================================
-   debug_layout.css — Debug Layout Lab
-   CÂU C1 — PBT 03
-   ==================================== */
+
 
 body {
     font-family: 'Courier New', monospace;
@@ -52,14 +49,12 @@ h2.good { color: #276749; }
     font-style: italic;
 }
 
-/* ========================
-   LAYOUT VỠ
-   ======================== */
+
 .container-broken {
     width: 960px;
     background: #fed7d7;
     border: 2px dashed #c53030;
-    overflow: visible;   /* để thấy rõ phần tràn */
+    overflow: visible;   
 }
 
 .sidebar-broken {
@@ -68,7 +63,7 @@ h2.good { color: #276749; }
     border: 1px solid #c53030;
     background: #fff5f5;
     float: left;
-    /* Thực tế: 300 + 40 + 2 = 342px */
+  
 }
 
 .content-broken {
@@ -77,13 +72,10 @@ h2.good { color: #276749; }
     border: 1px solid #c53030;
     background: #fffff0;
     float: left;
-    /* Thực tế: 660 + 60 + 2 = 722px */
-    /* 342 + 722 = 1064 > 960 → BỊ ĐẨY XUỐNG */
+   
 }
 
-/* ========================
-   CÁCH SỬA 1: border-box
-   ======================== */
+
 .container-fix1 {
     width: 960px;
     background: #c6f6d5;
@@ -91,29 +83,26 @@ h2.good { color: #276749; }
 }
 
 .sidebar-fix1 {
-    box-sizing: border-box;    /* ← THÊM DÒNG NÀY */
+    box-sizing: border-box;    
     width: 300px;
     padding: 20px;
     border: 1px solid #276749;
     background: #f0fff4;
     float: left;
-    /* Thực tế: đúng 300px */
+
 }
 
 .content-fix1 {
-    box-sizing: border-box;    /* ← THÊM DÒNG NÀY */
+    box-sizing: border-box;    
     width: 660px;
     padding: 30px;
     border: 1px solid #276749;
     background: #fffff0;
     float: left;
-    /* Thực tế: đúng 660px */
-    /* 300 + 660 = 960px ✅ */
+    
 }
 
-/* ========================
-   CÁCH SỬA 2: Giảm width thủ công
-   ======================== */
+
 .container-fix2 {
     width: 960px;
     background: #bee3f8;
@@ -121,8 +110,8 @@ h2.good { color: #276749; }
 }
 
 .sidebar-fix2 {
-    /* KHÔNG dùng border-box */
-    width: 258px;      /* ← 300 - 40 - 2 = 258 → thực tế = 300px */
+  
+    width: 258px;      
     padding: 20px;
     border: 1px solid #2b6cb0;
     background: #ebf8ff;
@@ -130,16 +119,15 @@ h2.good { color: #276749; }
 }
 
 .content-fix2 {
-    /* KHÔNG dùng border-box */
-    width: 598px;      /* ← 660 - 60 - 2 = 598 → thực tế = 660px */
+    
+    width: 598px;      
     padding: 30px;
     border: 1px solid #2b6cb0;
     background: #fffff0;
     float: left;
-    /* Tổng thực tế: 300 + 660 = 960px ✅ */
+
 }
 
-/* Clearfix */
 .clearfix::after {
     content: "";
     display: table;
