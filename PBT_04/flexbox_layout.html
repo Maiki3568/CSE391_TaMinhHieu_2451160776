@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout — B2</title>
+    <link rel="stylesheet" href="flexbox.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="navbar__logo">ShopTLU</div>
+
+        <nav class="navbar__menu">
+            <a href="#" class="navbar__link active">Home</a>
+            <a href="#" class="navbar__link">Products</a>
+            <a href="#" class="navbar__link">About</a>
+            <a href="#" class="navbar__link">Blog</a>
+        </nav>
+
+        <div class="navbar__actions">
+            <button class="btn btn--outline">Đăng nhập</button>
+            <button class="btn btn--primary">Đăng ký</button>
+        </div>
+
+    </header>
+
+
+    <main class="main-area">
+
+        <h2 class="section-title">Sản phẩm của chúng tôi</h2>
+
+        <div class="card-container">
+
+
+            <!-- card 1 -->
+            <div class="card">
+
+                <div class="card__image">
+                    <img 
+                        src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-pro-max-blacktitanium-select?wid=500&hei=500&fmt=png-alpha"
+                        alt="iPhone 16 Pro Max"
+                    >
+                </div>
+
+                <div class="card__body">
+                    <h3 class="card__name">iPhone 16 Pro Max</h3>
+
+                    <p class="card__desc">
+                        Chip A18 Pro, camera 48MP, màn hình ProMotion 120Hz
+                    </p>
+
+                    <p class="card__price">
+                        34.990.000đ
+                    </p>
+                </div>
+
+                <button class="card__btn">
+                    Mua ngay
+                </button>
+
+            </div>
+
+
+            <!-- card 2 -->
+            <div class="card">
+
+                <div class="card__image">
+                    <img 
+                        src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/macbook-pro-14-spaceblack-select?wid=500&hei=500&fmt=png-alpha"
+                        alt="MacBook Pro M4"
+                    >
+                </div>
+
+                <div class="card__body">
+                    <h3 class="card__name">MacBook Pro M4</h3>
+
+                    <p class="card__desc">
+                        Chip M4 Pro, RAM 24GB, SSD 512GB, màn hình Liquid Retina XDR
+                    </p>
+
+                    <p class="card__price">
+                        52.990.000đ
+                    </p>
+                </div>
+
+                <button class="card__btn">
+                    Mua ngay
+                </button>
+
+            </div>
+
+
+            <!-- card 3 -->
+            <div class="card">
+
+                <div class="card__image">
+                    <img 
+                        src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-2nd-gen-select?wid=500&hei=500&fmt=png-alpha"
+                        alt="AirPods Pro 2"
+                    >
+                </div>
+
+                <div class="card__body">
+                    <h3 class="card__name">AirPods Pro 2</h3>
+
+                    <p class="card__desc">
+                        Chống ồn chủ động, âm thanh không gian
+                    </p>
+
+                    <p class="card__price">
+                        6.290.000đ
+                    </p>
+                </div>
+
+                <button class="card__btn">
+                    Mua ngay
+                </button>
+
+            </div>
+
+
+            <!-- card 4 -->
+            <div class="card">
+
+                <div class="card__image">
+                    <img 
+                        src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/apple-watch-series-10-aluminum-jetblack-sport-band-select?wid=500&hei=500&fmt=png-alpha"
+                        alt="Apple Watch Series 10"
+                    >
+                </div>
+
+                <div class="card__body">
+                    <h3 class="card__name">Apple Watch Series 10</h3>
+
+                    <p class="card__desc">
+                        Màn hình lớn hơn, mỏng hơn, sạc nhanh 30 phút
+                    </p>
+
+                    <p class="card__price">
+                        11.990.000đ
+                    </p>
+                </div>
+
+                <button class="card__btn">
+                    Mua ngay
+                </button>
+
+            </div>
+
+
+            <!-- card 5 -->
+            <div class="card">
+
+                <div class="card__image">
+                    <img 
+                        src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-model-select-gallery-1-202405?wid=500&hei=500&fmt=png-alpha"
+                        alt="iPad Pro M4"
+                    >
+                </div>
+
+                <div class="card__body">
+                    <h3 class="card__name">iPad Pro M4</h3>
+
+                    <p class="card__desc">
+                        Mỏng nhất từ trước đến nay
+                    </p>
+
+                    <p class="card__price">
+                        27.990.000đ
+                    </p>
+                </div>
+
+                <button class="card__btn">
+                    Mua ngay
+                </button>
+
+            </div>
+
+
+            <!-- card 6 -->
+            <div class="card">
+
+                <div class="card__image">
+                    <img 
+                        src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXK63?wid=500&hei=500&fmt=png-alpha"
+                        alt="Magic Mouse 3"
+                    >
+                </div>
+
+                <div class="card__body">
+                    <h3 class="card__name">Magic Mouse 3</h3>
+
+                    <p class="card__desc">
+                        Cảm ứng đa điểm, sạc USB-C, kết nối Bluetooth 5.3 tốc độ cao
+                    </p>
+
+                    <p class="card__price">
+                        2.490.000đ
+                    </p>
+                </div>
+
+                <button class="card__btn">
+                    Mua ngay
+                </button>
+
+            </div>
+
+
+            <!-- card 7 -->
+            <div class="card">
+
+                <div class="card__image">
+                    <img 
+                        src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXCL3?wid=500&hei=500&fmt=png-alpha"
+                        alt="Magic Keyboard"
+                    >
+                </div>
+
+                <div class="card__body">
+                    <h3 class="card__name">Magic Keyboard</h3>
+
+                    <p class="card__desc">
+                        Touch ID, layout số, kết nối không dây
+                    </p>
+
+                    <p class="card__price">
+                        3.690.000đ
+                    </p>
+                </div>
+
+                <button class="card__btn">
+                    Mua ngay
+                </button>
+
+            </div>
+
+
+            <!-- card 8 -->
+            <div class="card">
+
+                <div class="card__image">
+                    <img 
+                        src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MHXH3?wid=500&hei=500&fmt=png-alpha"
+                        alt="MagSafe Charger 25W"
+                    >
+                </div>
+
+                <div class="card__body">
+                    <h3 class="card__name">MagSafe Charger 25W</h3>
+
+                    <p class="card__desc">
+                        Sạc nhanh 25W cho iPhone 16 series, thiết kế từ tính
+                    </p>
+
+                    <p class="card__price">
+                        1.290.000đ
+                    </p>
+                </div>
+
+                <button class="card__btn">
+                    Mua ngay
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+</body>
+</html>
