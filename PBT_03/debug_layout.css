@@ -1,0 +1,147 @@
+/* ====================================
+   debug_layout.css — Debug Layout Lab
+   CÂU C1 — PBT 03
+   ==================================== */
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #f7fafc;
+    color: #2d3748;
+    padding: 20px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #e53e3e;
+    padding-bottom: 8px;
+    color: #1a202c;
+}
+
+h2 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+h2.bad { color: #c53030; }
+h2.good { color: #276749; }
+
+.demo-section {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 28px;
+}
+
+.note {
+    background: #fffbeb;
+    border-left: 4px solid #f6ad55;
+    padding: 8px 12px;
+    margin-bottom: 14px;
+    border-radius: 0 4px 4px 0;
+    font-size: 12px;
+}
+
+.explain {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #4a5568;
+    font-style: italic;
+}
+
+/* ========================
+   LAYOUT VỠ
+   ======================== */
+.container-broken {
+    width: 960px;
+    background: #fed7d7;
+    border: 2px dashed #c53030;
+    overflow: visible;   /* để thấy rõ phần tràn */
+}
+
+.sidebar-broken {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #c53030;
+    background: #fff5f5;
+    float: left;
+    /* Thực tế: 300 + 40 + 2 = 342px */
+}
+
+.content-broken {
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #c53030;
+    background: #fffff0;
+    float: left;
+    /* Thực tế: 660 + 60 + 2 = 722px */
+    /* 342 + 722 = 1064 > 960 → BỊ ĐẨY XUỐNG */
+}
+
+/* ========================
+   CÁCH SỬA 1: border-box
+   ======================== */
+.container-fix1 {
+    width: 960px;
+    background: #c6f6d5;
+    border: 2px solid #276749;
+}
+
+.sidebar-fix1 {
+    box-sizing: border-box;    /* ← THÊM DÒNG NÀY */
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #276749;
+    background: #f0fff4;
+    float: left;
+    /* Thực tế: đúng 300px */
+}
+
+.content-fix1 {
+    box-sizing: border-box;    /* ← THÊM DÒNG NÀY */
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #276749;
+    background: #fffff0;
+    float: left;
+    /* Thực tế: đúng 660px */
+    /* 300 + 660 = 960px ✅ */
+}
+
+/* ========================
+   CÁCH SỬA 2: Giảm width thủ công
+   ======================== */
+.container-fix2 {
+    width: 960px;
+    background: #bee3f8;
+    border: 2px solid #2b6cb0;
+}
+
+.sidebar-fix2 {
+    /* KHÔNG dùng border-box */
+    width: 258px;      /* ← 300 - 40 - 2 = 258 → thực tế = 300px */
+    padding: 20px;
+    border: 1px solid #2b6cb0;
+    background: #ebf8ff;
+    float: left;
+}
+
+.content-fix2 {
+    /* KHÔNG dùng border-box */
+    width: 598px;      /* ← 660 - 60 - 2 = 598 → thực tế = 660px */
+    padding: 30px;
+    border: 1px solid #2b6cb0;
+    background: #fffff0;
+    float: left;
+    /* Tổng thực tế: 300 + 660 = 960px ✅ */
+}
+
+/* Clearfix */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
