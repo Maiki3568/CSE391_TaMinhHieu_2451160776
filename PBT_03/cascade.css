@@ -1,11 +1,4 @@
-/* ====================================
-   cascade.css — Cascade Puzzle Test
-   CÂU C2 — PBT 03
-   ==================================== */
 
-/* =========================================
-   CSS RULES GỐC TỪ ĐỀ BÀI (giữ nguyên)
-   ========================================= */
 
 body { font-size: 16px; color: #333; }
 .container { font-size: 14px; }
@@ -15,9 +8,7 @@ body { font-size: 16px; color: #333; }
 #featured .title { color: red; }
 .highlight { color: green !important; }
 
-/* =========================================
-   Styling trang (không ảnh hưởng cascade test)
-   ========================================= */
+
 body {
     font-family: 'Segoe UI', sans-serif;
     background: #f7fafc;
