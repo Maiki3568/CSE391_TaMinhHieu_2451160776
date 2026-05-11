@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity Battle — B3</title>
+    <link rel="stylesheet" href="specificity.css">
+</head>
+<body>
+
+    <h1>Bài B3 — Specificity Battle</h1>
+
+    <!-- Phần tử chính để thử nghiệm -->
+    <div class="demo-box">
+        <h2>Phần tử đang test:</h2>
+        <p id="demo" class="text highlight">Hello World</p>
+        <p class="result-note">
+            ↑ Màu hiển thị: <strong>hotpink</strong>
+            — Rule <code>#demo.text.highlight</code> có specificity cao nhất (1,2,1)
+        </p>
+    </div>
+
+    <!-- Bảng giải thích 10 rules -->
+    <div class="demo-box">
+        <h2>10 Rules từ thấp đến cao (specificity):</h2>
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>CSS Rule</th>
+                    <th>Specificity</th>
+                    <th>Color nếu chỉ rule này</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><code>* { color: dimgray; }</code></td>
+                    <td>(0,0,0)</td>
+                    <td><span class="swatch" style="background:dimgray;"></span> dimgray</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><code>p { color: slategray; }</code></td>
+                    <td>(0,0,1)</td>
+                    <td><span class="swatch" style="background:slategray;"></span> slategray</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><code>div p { color: steelblue; }</code></td>
+                    <td>(0,0,2)</td>
+                    <td><span class="swatch" style="background:steelblue;"></span> steelblue</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><code>.text { color: teal; }</code></td>
+                    <td>(0,1,0)</td>
+                    <td><span class="swatch" style="background:teal;"></span> teal</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><code>.highlight { color: darkcyan; }</code></td>
+                    <td>(0,1,0)</td>
+                    <td><span class="swatch" style="background:darkcyan;"></span> darkcyan</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><code>p.text { color: mediumblue; }</code></td>
+                    <td>(0,1,1)</td>
+                    <td><span class="swatch" style="background:mediumblue;"></span> mediumblue</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><code>p.text.highlight { color: darkviolet; }</code></td>
+                    <td>(0,2,1)</td>
+                    <td><span class="swatch" style="background:darkviolet;"></span> darkviolet</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><code>#demo { color: darkred; }</code></td>
+                    <td>(1,0,0)</td>
+                    <td><span class="swatch" style="background:darkred;"></span> darkred</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><code>#demo.text { color: crimson; }</code></td>
+                    <td>(1,1,0)</td>
+                    <td><span class="swatch" style="background:crimson;"></span> crimson</td>
+                </tr>
+                <tr class="winner-row">
+                    <td>10 ★</td>
+                    <td><code>#demo.text.highlight { color: hotpink; }</code></td>
+                    <td>(1,2,1) ← THẮNG</td>
+                    <td><span class="swatch" style="background:hotpink;"></span> hotpink</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Giải thích -->
+    <div class="demo-box explanation">
+        <h2>Giải thích kết quả:</h2>
+        <p>Element <code>&lt;p id="demo" class="text highlight"&gt;</code> có màu <strong style="color:hotpink">hotpink</strong> vì rule số 10 <code>#demo.text.highlight</code> có specificity <strong>(1,2,1)</strong> cao nhất trong 10 rules.</p>
+        <br>
+        <p><strong>Nếu đổi thứ tự rules trong file CSS:</strong></p>
+        <p>Chỉ khi 2 rules có <em>cùng specificity</em> thì thứ tự mới quan trọng (rule sau thắng). Nhưng trong bài này 10 rules có specificity khác nhau hoàn toàn → đổi thứ tự <strong>KHÔNG thay đổi kết quả</strong>. Specificity quyết định, không phải vị trí.</p>
+    </div>
+
+</body>
+</html>
