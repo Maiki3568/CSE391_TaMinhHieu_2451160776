@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascade Test — C2</title>
+    <link rel="stylesheet" href="cascade.css">
+</head>
+<body>
+
+    <h1>Câu C2 — Cascade Puzzle</h1>
+
+    <!-- Bảng dự đoán kết quả -->
+    <div class="prediction-table">
+        <h2>Dự đoán kết quả (trước khi chạy):</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Phần tử</th>
+                    <th>font-size</th>
+                    <th>color</th>
+                    <th>Lý do</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>"Sản phẩm A" (h2.title.highlight)</td>
+                    <td>20px</td>
+                    <td style="color:green;font-weight:bold">green</td>
+                    <td>.highlight có !important → thắng #featured .title</td>
+                </tr>
+                <tr>
+                    <td>"Mô tả sản phẩm" (p trong #featured)</td>
+                    <td>14px</td>
+                    <td style="color:blue;font-weight:bold">blue</td>
+                    <td>color: inherit → lấy từ .card { color: blue }</td>
+                </tr>
+                <tr>
+                    <td>"Sản phẩm B" (h2.title)</td>
+                    <td>20px</td>
+                    <td style="color:blue;font-weight:bold">blue</td>
+                    <td>Kế thừa từ .card { color: blue }</td>
+                </tr>
+                <tr>
+                    <td>"Mô tả sản phẩm B" (p.highlight)</td>
+                    <td>14px</td>
+                    <td style="color:green;font-weight:bold">green</td>
+                    <td>.highlight có !important → thắng tất cả</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Kiểm chứng thực tế -->
+    <div class="verification">
+        <h2>Kiểm chứng thực tế:</h2>
+
+        <div class="container">
+            <div class="card" id="featured">
+                <h2 class="title highlight">Sản phẩm A</h2>
+                <p>Mô tả sản phẩm</p>
+            </div>
+            <div class="card">
+                <h2 class="title">Sản phẩm B</h2>
+                <p class="highlight">Mô tả sản phẩm B</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chú thích kết quả -->
+    <div class="annotations">
+        <h2>Chú thích:</h2>
+        <ul>
+            <li><strong>"Sản phẩm A"</strong>: màu <em style="color:green">green</em> — <code>.highlight { color: green !important; }</code> thắng <code>#featured .title { color: red; }</code> dù ID selector có specificity cao hơn, vì <code>!important</code> override tất cả.</li>
+            <li><strong>"Mô tả sản phẩm"</strong>: màu <em style="color:blue">blue</em> — <code>.card p { color: inherit; }</code> → inherit từ cha <code>.card { color: blue; }</code>.</li>
+            <li><strong>"Sản phẩm B"</strong>: màu <em style="color:blue">blue</em> — h2 kế thừa từ <code>.card { color: blue; }</code>. font-size = 20px từ <code>.card .title</code>.</li>
+            <li><strong>"Mô tả sản phẩm B"</strong>: màu <em style="color:green">green</em> — <code>.highlight { color: green !important; }</code> thắng.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
