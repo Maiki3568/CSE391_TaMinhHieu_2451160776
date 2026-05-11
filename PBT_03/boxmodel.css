@@ -1,7 +1,3 @@
-/* ====================================
-   boxmodel.css — Box Model Lab
-   BÀI B2 — PBT 03
-   ==================================== */
 
 * {
     margin: 0;
@@ -72,10 +68,6 @@ h3 {
     margin-bottom: 8px;
 }
 
-/* --------------------------------------------------
-   PHẦN 1: Hộp so sánh content-box vs border-box
-   Cả hai dùng width: 300px, padding: 20px, border: 5px
-   -------------------------------------------------- */
 .boxes-wrapper {
     display: flex;
     gap: 20px;
@@ -84,7 +76,6 @@ h3 {
     margin-bottom: 20px;
 }
 
-/* Hộp 1 — content-box (KHÔNG có box-sizing đặt = mặc định content-box) */
 .box-content-box {
     width: 300px;
     padding: 20px;
@@ -100,7 +91,7 @@ h3 {
     padding: 20px;
     border: 5px solid #276749;
     background: #f0fff4;
-    /* Thực tế = đúng 300px */
+    
 }
 
 .box {
@@ -113,7 +104,7 @@ h3 {
     margin: 10px 0;
 }
 
-/* Thước đo trực quan */
+
 .ruler-section {
     margin-top: 16px;
 }
@@ -140,17 +131,14 @@ h3 {
     background: linear-gradient(90deg, #68d391, #276749);
 }
 
-/* --------------------------------------------------
-   PHẦN 2: Layout 3 cột
-   Container = 1000px
-   -------------------------------------------------- */
 
-/* TRƯỜNG HỢP A: KHÔNG dùng border-box → VỠ */
+
+
 .container-broken {
     width: 1000px;
     background: #fed7d7;
     border: 2px dashed #c53030;
-    overflow: auto;  /* để thấy hộp bị vỡ ra ngoài */
+    overflow: auto;  
     margin-bottom: 16px;
 }
 
@@ -160,7 +148,7 @@ h3 {
     background: #fff5f5;
     border: 2px solid #c53030;
     float: left;
-    /* Thực tế: 250 + 30 = 280px */
+    
 }
 
 .content-broken {
@@ -169,7 +157,7 @@ h3 {
     background: #fffaf0;
     border: 2px solid #dd6b20;
     float: left;
-    /* Thực tế: 500 + 40 = 540px */
+    
 }
 
 .ads-broken {
@@ -178,11 +166,10 @@ h3 {
     background: #fff5f5;
     border: 2px solid #c53030;
     float: left;
-    /* Thực tế: 250 + 30 = 280px */
-    /* TỔNG THỰC TẾ: 280 + 540 + 280 = 1100px → VỠ! */
+    
 }
 
-/* TRƯỜNG HỢP B: CÓ border-box → ĐÚNG */
+
 .container-fixed {
     box-sizing: border-box;
     width: 1000px;
@@ -199,7 +186,7 @@ h3 {
     background: #f0fff4;
     border: 2px solid #276749;
     float: left;
-    /* Thực tế: đúng 250px */
+   
 }
 
 .content-fixed {
@@ -208,8 +195,7 @@ h3 {
     padding: 20px;
     background: #fffff0;
     border: 2px solid #276749;
-    float: left;
-    /* Thực tế: đúng 500px */
+   
 }
 
 .ads-fixed {
@@ -219,8 +205,7 @@ h3 {
     background: #f0fff4;
     border: 2px solid #276749;
     float: left;
-    /* Thực tế: đúng 250px */
-    /* TỔNG: 250 + 500 + 250 = 1000px ✅ */
+  
 }
 
 .clearfix::after {
