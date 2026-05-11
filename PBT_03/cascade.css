@@ -1,0 +1,104 @@
+/* ====================================
+   cascade.css — Cascade Puzzle Test
+   CÂU C2 — PBT 03
+   ==================================== */
+
+/* =========================================
+   CSS RULES GỐC TỪ ĐỀ BÀI (giữ nguyên)
+   ========================================= */
+
+body { font-size: 16px; color: #333; }
+.container { font-size: 14px; }
+.card { color: blue; }
+.card .title { font-size: 20px; }
+.card p { color: inherit; }
+#featured .title { color: red; }
+.highlight { color: green !important; }
+
+/* =========================================
+   Styling trang (không ảnh hưởng cascade test)
+   ========================================= */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f7fafc;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 20px;
+    color: #1a202c;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 8px;
+}
+
+h2 {
+    font-size: 16px;
+    color: #2d3748;
+    margin-bottom: 12px;
+}
+
+.prediction-table,
+.verification,
+.annotations {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+/* Table dự đoán */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+th, td {
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+thead tr {
+    background: #667eea;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background: #f7fafc;
+}
+
+/* Container kiểm chứng */
+.verification .container {
+    background: white;
+    padding: 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+}
+
+.verification .card {
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background: #fafafa;
+}
+
+.verification .card:last-child {
+    margin-bottom: 0;
+}
+
+/* Annotations */
+.annotations ul {
+    padding-left: 20px;
+}
+
+.annotations li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.6;
+}
