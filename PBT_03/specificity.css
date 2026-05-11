@@ -1,0 +1,152 @@
+/* ====================================
+   specificity.css — Specificity Battle
+   BÀI B3 — PBT 03
+   10 Rules từ thấp → cao specificity
+   ==================================== */
+
+/* ============================
+   10 RULES — Từ thấp đến cao
+   Tất cả target: <p id="demo" class="text highlight">
+   ============================ */
+
+/* Rule 1 — Universal: (0,0,0) */
+* { color: dimgray; }
+
+/* Rule 2 — Type selector: (0,0,1) */
+p { color: slategray; }
+
+/* Rule 3 — 2 Type selectors: (0,0,2) */
+div p { color: steelblue; }
+
+/* Rule 4 — Class selector: (0,1,0) */
+.text { color: teal; }
+
+/* Rule 5 — Class selector (cùng specificity với Rule 4, nhưng sau → thắng Rule 4): (0,1,0) */
+.highlight { color: darkcyan; }
+
+/* Rule 6 — Type + Class: (0,1,1) */
+p.text { color: mediumblue; }
+
+/* Rule 7 — Type + 2 Class: (0,2,1) */
+p.text.highlight { color: darkviolet; }
+
+/* Rule 8 — ID selector: (1,0,0) */
+#demo { color: darkred; }
+
+/* Rule 9 — ID + Class: (1,1,0) */
+#demo.text { color: crimson; }
+
+/* Rule 10 — ID + 2 Class: (1,2,1) ← THẮNG */
+#demo.text.highlight { color: hotpink; }
+
+/* ============================
+   Page styling (không liên quan specificity battle)
+   ============================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #1a1a2e;
+    color: #e2e8f0;
+    padding: 24px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+h1 {
+    font-size: 22px;
+    color: #f6ad55;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f6ad55;
+    padding-bottom: 8px;
+}
+
+h2 {
+    font-size: 16px;
+    color: #fbd38d;
+    margin-bottom: 14px;
+}
+
+.demo-box {
+    background: #16213e;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+}
+
+/* Phần tử đang test — hiển thị to rõ */
+#demo {
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    padding: 24px;
+    background: #0f3460;
+    border-radius: 8px;
+    border: 2px solid hotpink;
+    letter-spacing: 2px;
+    margin: 10px 0;
+}
+
+.result-note {
+    font-size: 13px;
+    color: #a0aec0;
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* Table */
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.spec-table th,
+.spec-table td {
+    padding: 10px 12px;
+    border: 1px solid #2d3748;
+    text-align: left;
+}
+
+.spec-table thead tr {
+    background: #2d3748;
+    color: #fbd38d;
+}
+
+.spec-table tbody tr:nth-child(even) {
+    background: #1e2a3a;
+}
+
+.spec-table tbody tr:hover {
+    background: #2a3f5a;
+}
+
+.winner-row {
+    background: #2d1b33 !important;
+    border: 2px solid hotpink !important;
+}
+
+.winner-row td {
+    color: hotpink;
+    font-weight: bold;
+}
+
+.swatch {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-right: 4px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.explanation p {
+    margin-bottom: 8px;
+    color: #cbd5e0;
+}
