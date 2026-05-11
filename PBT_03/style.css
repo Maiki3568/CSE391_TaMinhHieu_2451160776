@@ -1,0 +1,192 @@
+/* ====================================
+   style.css — Profile Page Stylesheet
+   BÀI B1 — PBT 03
+   ==================================== */
+
+/* 1. Reset cơ bản — DÒNG ĐẦU TIÊN BẮT BUỘC */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------------------------------
+   2. ELEMENT SELECTOR — body typography
+---------------------------------------- */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f0f4f8;
+    color: #2d3748;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 14px;
+    color: #1a365d;
+    border-bottom: 2px solid #3182ce;
+    padding-bottom: 6px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* ----------------------------------------
+   3. ID SELECTOR — #main-header
+---------------------------------------- */
+#main-header {
+    background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+    color: white;
+    padding: 40px 24px;
+    text-align: center;
+}
+
+#main-header h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+/* ----------------------------------------
+   4. CLASS SELECTOR — .subtitle
+---------------------------------------- */
+.subtitle {
+    font-size: 15px;
+    opacity: 0.85;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+/* ----------------------------------------
+   5. DESCENDANT SELECTOR — navigation links
+---------------------------------------- */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.nav-links a {
+    color: #bee3f8;
+    text-decoration: none;          /* Mặc định: không gạch chân */
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s, color 0.25s;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ----------------------------------------
+   6. PSEUDO-CLASS — :hover
+---------------------------------------- */
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: underline;     /* Hover: thêm gạch chân */
+}
+
+/* ----------------------------------------
+   7. CLASS SELECTOR — .active link
+---------------------------------------- */
+.nav-links a.active {
+    background-color: white;
+    color: #1a365d;
+    font-weight: 700;
+}
+
+/* ----------------------------------------
+   8. CONTAINER & SECTION
+---------------------------------------- */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background: white;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ----------------------------------------
+   9. TABLE — .skills-table
+   (border-collapse, zebra, hover)
+---------------------------------------- */
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;      /* Gộp đường viền */
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.skills-table th,
+.skills-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border: 1px solid #e2e8f0;
+}
+
+/* Header row: background đậm, text trắng */
+.skills-table thead tr {
+    background-color: #2b6cb0;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Zebra striping: dùng tr:nth-child(even) */
+.skills-table tbody tr:nth-child(even) {
+    background-color: #ebf8ff;
+}
+
+.skills-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Hover row */
+.skills-table tbody tr:hover {
+    background-color: #bee3f8;
+    transition: background-color 0.2s;
+    cursor: default;
+}
+
+/* ----------------------------------------
+   10. PROJECT LIST
+---------------------------------------- */
+.project-list {
+    padding-left: 20px;
+}
+
+.project-list li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* ----------------------------------------
+   11. FOOTER — element selector
+---------------------------------------- */
+footer {
+    background-color: #1a365d;
+    color: #a0aec0;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+}
+
+/* ----------------------------------------
+   DANH SÁCH 5 LOẠI SELECTOR SỬ DỤNG:
+   1. Element selector: body, h2, p, footer, table
+   2. Class selector: .subtitle, .nav-links, .skills-table
+   3. ID selector: #main-header
+   4. Descendant selector: .nav-links a
+   5. Pseudo-class: a:hover, tr:nth-child(even), tr:hover, a.active
+---------------------------------------- */
