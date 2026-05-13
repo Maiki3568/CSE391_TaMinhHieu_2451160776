@@ -1,0 +1,74 @@
+.skills-section .skills-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.skills-section .skill-item {
+    min-width: 0;
+}
+
+.skills-section .skill-name {
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.skills-section .skill-head {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-section .skill-percent {
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+
+.skills-section .skill-bar {
+    background: #e2e8f0;
+    border-radius: 10px;
+    height: 12px;
+    overflow: hidden;
+}
+
+/* Mặc định: hiển thị đủ chiều rộng (trình duyệt không hỗ trợ scroll animation) */
+.skills-section .skill-progress {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    height: 100%;
+    width: var(--w);
+}
+
+/* Khi cuộn vào viewport: animation thuần CSS (Scroll-driven animations) */
+@supports (animation-timeline: view()) {
+    @keyframes skill-fill {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: var(--w);
+        }
+    }
+
+    .skills-section .skill-progress {
+        animation: skill-fill 1s ease-out forwards;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+        width: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skills-section .skill-progress {
+        animation: none !important;
+        transition: none !important;
+        width: var(--w) !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .skills-section .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
