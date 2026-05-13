@@ -1,0 +1,80 @@
+header {
+    align-items: center;
+    background: var(--color-light);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    gap: 2rem;
+}
+
+header nav a {
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.burger {
+    cursor: pointer;
+    display: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    user-select: none;
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    header nav {
+        background: var(--color-light);
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        left: 0;
+        padding: 1rem 0;
+        position: absolute;
+        text-align: center;
+        top: 100%;
+        width: 100%;
+    }
+
+    header nav a {
+        padding: 0.75rem 1rem;
+    }
+
+    .menu-toggle:checked ~ nav {
+        display: flex;
+    }
+}
