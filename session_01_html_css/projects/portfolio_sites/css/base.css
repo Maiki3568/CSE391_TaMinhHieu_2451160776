@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-light);
+    color: var(--color-text);
+    font-family: var(--font-main);
+    line-height: 1.6;
+}
+
+.container {
+    margin-inline: auto;
+    max-width: 1200px;
+    padding-block: 4rem;
+    width: 90%;
+}
+
+h2 {
+    color: var(--color-dark);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.cta-button {
+    background: var(--color-primary);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.cta-button:hover {
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+    transform: scale(1.05);
+}

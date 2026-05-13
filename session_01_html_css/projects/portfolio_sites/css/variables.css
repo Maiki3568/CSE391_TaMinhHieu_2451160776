@@ -1,0 +1,15 @@
+:root {
+    --color-primary: #6366f1;
+    --color-secondary: #8b5cf6;
+    --color-dark: #1e293b;
+    --color-light: #f8fafc;
+    --color-text: #334155;
+    --font-main: 'Segoe UI', sans-serif;
+
+    /* tương thích với tên biến cũ (nếu còn tham chiếu) */
+    --brand: var(--color-primary);
+    --brand-soft: var(--color-secondary);
+    --ink-dark: var(--color-dark);
+    --ink-body: var(--color-text);
+    --paper: var(--color-light);
+}
