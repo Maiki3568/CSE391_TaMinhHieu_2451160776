@@ -1,0 +1,102 @@
+.contact-section .contact-wrapper {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.contact-section .contact-info h3 {
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+}
+
+.contact-section .contact-info > p {
+    color: #64748b;
+    margin-bottom: 2rem;
+}
+
+.contact-section .info-item {
+    align-items: center;
+    color: var(--color-text);
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-section .info-item .icon {
+    align-items: center;
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: center;
+}
+
+.contact-section .contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-section .contact-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.contact-section .contact-form input,
+.contact-section .contact-form textarea {
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    min-height: 44px;
+    padding: 0.875rem 1rem;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.contact-section .contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-section .contact-form input:focus,
+.contact-section .contact-form textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    outline: none;
+}
+
+.contact-section .contact-form input:user-invalid,
+.contact-section .contact-form textarea:user-invalid {
+    border-color: #ef4444;
+}
+
+.contact-section .contact-form input:user-valid,
+.contact-section .contact-form textarea:user-valid {
+    border-color: #22c55e;
+}
+
+.contact-section .submit-btn {
+    background: var(--color-primary);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    min-height: 44px;
+    padding: 0.875rem 1.25rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.contact-section .submit-btn:hover {
+    background: var(--color-secondary);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 767px) {
+    .contact-section .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
