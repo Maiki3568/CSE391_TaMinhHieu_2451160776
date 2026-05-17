@@ -1,0 +1,42 @@
+/* Comment section */
+
+.comment-avatar {
+    height: 50px;
+    object-fit: cover;
+    width: 50px;
+}
+
+.comment-avatar-sm {
+    height: 40px;
+    width: 40px;
+}
+
+.comment.reply {
+    border-left: 3px solid #e2e8f0;
+}
+
+.reply-btn {
+    color: var(--bs-primary);
+    text-decoration: none;
+}
+
+.reply-btn:hover {
+    color: var(--primary-hover);
+}
+
+.comments-list .comment + .comment {
+    padding-top: 0.25rem;
+}
+
+@media (max-width: 767px) {
+    .comment.reply {
+        border-left: none;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .comment-avatar {
+        height: 42px;
+        width: 42px;
+    }
+}
