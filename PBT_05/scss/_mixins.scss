@@ -1,0 +1,50 @@
+@mixin respond-to($breakpoint) {
+
+    @if $breakpoint == tablet {
+
+        @media (min-width: $breakpoint-tablet) {
+            @content;
+        }
+
+    } @else if $breakpoint == desktop {
+
+        @media (min-width: $breakpoint-desktop) {
+            @content;
+        }
+
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin card-shadow {
+
+    box-shadow: $shadow-sm;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-lg;
+    }
+}
+
+@mixin btn-base {
+
+    padding: 10px $spacing-md;
+    border: none;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+@mixin text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
