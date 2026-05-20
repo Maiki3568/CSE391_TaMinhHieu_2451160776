@@ -1,0 +1,141 @@
+@import 'variables';
+@import 'mixins';
+@import 'components';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    color: $text-dark;
+    background: $bg-light;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.page-layout {
+
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: $spacing-md;
+
+    @include respond-to(tablet) {
+        padding: $spacing-md $spacing-lg;
+    }
+
+    @include respond-to(desktop) {
+
+        display: grid;
+        grid-template-columns: 220px 1fr 180px;
+        gap: $spacing-lg;
+        padding: $spacing-lg $spacing-xl;
+        align-items: start;
+    }
+}
+
+.sidebar {
+
+    display: none;
+    background: $bg-white;
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    box-shadow: $shadow-sm;
+
+    &__title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: $spacing-md;
+    }
+
+    @include respond-to(tablet) {
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-lg;
+        margin-bottom: $spacing-md;
+    }
+
+    @include respond-to(desktop) {
+
+        display: block;
+        position: sticky;
+        top: 80px;
+    }
+}
+
+.filter-group {
+
+    margin-bottom: $spacing-md;
+
+    &__label {
+
+        font-size: $font-size-sm;
+        font-weight: 600;
+        color: $text-medium;
+        margin-bottom: $spacing-sm;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+}
+
+.filter-item {
+
+    display: block;
+    font-size: $font-size-sm;
+    color: $text-medium;
+    margin-bottom: $spacing-xs;
+    cursor: pointer;
+
+    input {
+        margin-right: $spacing-sm;
+    }
+}
+
+.ads-bar {
+
+    display: none;
+
+    @include respond-to(desktop) {
+
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-md;
+        position: sticky;
+        top: 80px;
+    }
+}
+
+.ads-banner {
+
+    background: linear-gradient(
+        135deg,
+        $primary-color,
+        $secondary-color
+    );
+
+    color: $bg-white;
+    border-radius: $radius-md;
+    padding: $spacing-lg $spacing-md;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+.footer {
+
+    background: $text-dark;
+    color: $text-light;
+    text-align: center;
+    padding: $spacing-lg $spacing-md;
+    font-size: $font-size-sm;
+    margin-top: $spacing-xl;
+}
