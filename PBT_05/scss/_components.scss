@@ -1,0 +1,171 @@
+.header {
+
+    background: $text-dark;
+    padding: $spacing-md $spacing-md;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    &__logo {
+        color: $bg-white;
+        font-size: $font-size-xl;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    @include respond-to(tablet) {
+        padding: $spacing-md $spacing-xl;
+    }
+}
+
+.hamburger {
+
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: $bg-white;
+    font-size: 14px;
+    padding: $spacing-sm $spacing-md;
+    cursor: pointer;
+    border-radius: $radius-sm;
+
+    @include respond-to(tablet) {
+        display: none;
+    }
+}
+
+.nav-links {
+
+    display: none;
+    list-style: none;
+    flex-direction: column;
+    position: absolute;
+    top: 44px;
+    right: 0;
+    background: $text-medium;
+    min-width: 180px;
+    border-radius: $radius-md;
+    padding: $spacing-sm 0;
+    z-index: 200;
+
+    li a {
+
+        display: block;
+        padding: 10px $spacing-lg;
+        color: $border-color;
+        text-decoration: none;
+        font-size: $font-size-sm;
+        transition: background 0.2s;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    @include respond-to(tablet) {
+
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: none;
+        min-width: auto;
+        padding: 0;
+        gap: $spacing-xs;
+    }
+}
+
+.card {
+
+    background: $bg-white;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    @include card-shadow;
+
+    &__image-wrap {
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    &:hover &__image {
+        transform: scale(1.08);
+    }
+
+    &__body {
+        padding: $spacing-md;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    &__title {
+        font-size: $font-size-base;
+        font-weight: 600;
+        color: $text-dark;
+        margin-bottom: $spacing-sm;
+        line-height: 1.4;
+    }
+
+    &__price {
+        font-size: 16px;
+        font-weight: 700;
+        color: $danger-color;
+        margin-bottom: $spacing-md;
+    }
+}
+
+.btn {
+
+    @include btn-base;
+
+    margin-top: auto;
+
+    &--primary {
+
+        background: $primary-color;
+        color: $bg-white;
+
+        &:hover {
+            background: $primary-dark;
+            transform: scale(1.04);
+        }
+    }
+
+    &--outline {
+
+        background: transparent;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+
+        &:hover {
+            background: $primary-color;
+            color: $bg-white;
+        }
+    }
+}
+
+.product-grid {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+
+    @include respond-to(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-lg;
+    }
+
+    @include respond-to(desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
