@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Task Management System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="top-bar">
+      <div>
+        <p class="eyebrow">JavaScript cơ bản</p>
+        <h1>Personal Task Management System</h1>
+        <p class="subtitle">Quản lý công việc cá nhân bằng HTML, CSS và JavaScript thuần.</p>
+      </div>
+      <button id="openModalBtn" class="primary-btn">+ Thêm công việc</button>
+    </header>
+
+    <section class="summary">
+      <div class="summary-card">
+        <p class="summary-label">Tổng số công việc</p>
+        <p id="totalTasks" class="summary-value">0</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-label">Đã hoàn thành</p>
+        <p id="completedTasks" class="summary-value">0</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-label">Chưa hoàn thành</p>
+        <p id="pendingTasks" class="summary-value">0</p>
+      </div>
+    </section>
+
+    <section class="task-section">
+      <div class="task-header">
+        <h2>Danh sách công việc</h2>
+      </div>
+      <div id="taskList" class="task-list"></div>
+    </section>
+  </div>
+
+  <div id="taskModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Thêm công việc</h2>
+        <button id="closeModalBtn" class="icon-btn" type="button">×</button>
+      </div>
+
+      <form id="taskForm">
+        <label>
+          Tiêu đề
+          <input type="text" id="titleInput" placeholder="Nhập tiêu đề" required />
+        </label>
+
+        <label>
+          Mô tả
+          <textarea id="descriptionInput" rows="4" placeholder="Nhập mô tả"></textarea>
+        </label>
+
+        <label>
+          Hạn nộp
+          <input type="date" id="deadlineInput" required />
+        </label>
+
+        <label>
+          Mức ưu tiên
+          <select id="priorityInput">
+            <option value="Thấp">Thấp</option>
+            <option value="Trung bình">Trung bình</option>
+            <option value="Cao">Cao</option>
+          </select>
+        </label>
+
+        <div class="modal-actions">
+          <button type="button" id="cancelBtn" class="secondary-btn">Hủy</button>
+          <button type="submit" class="primary-btn">Lưu công việc</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="notification" class="notification hidden"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
