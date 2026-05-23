@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doan So</title>
+    <link rel="stylesheet" href="guess_number.css">
+</head>
+<body>
+    <h1>Doan So</h1>
+
+    <div class="game-box">
+        <p>May da chon mot so tu 1 den 100. Ban co 7 luot doan.</p>
+
+        <input type="number" id="inputSo" placeholder="Nhap so (1-100)" min="1" max="100">
+        <button id="btnDoan" onclick="xuLyDoan()">Doan</button>
+
+        <div id="thongBao"></div>
+        <div id="luot-con"></div>
+        <div id="danh-sach-doan"></div>
+
+        <button id="btnChoi" class="btn-reset" onclick="batDauGame()">
+            Choi Lai
+        </button>
+    </div>
+
+    <script src="guess.js"></script>
+</body>
+</html>
