@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">JavaScript cơ bản</p>
+        <h1>Student Management System</h1>
+        <p class="subtitle">Quản lý danh sách sinh viên bằng HTML, CSS và JavaScript thuần.</p>
+      </div>
+      <button id="addStudentButton" class="primary-btn">+ Thêm sinh viên</button>
+    </header>
+
+    <section class="stats">
+      <div class="stat-card">
+        <p class="stat-label">Tổng số sinh viên</p>
+        <p id="totalStudents" class="stat-value">0</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">GPA trung bình</p>
+        <p id="averageGpa" class="stat-value">0.00</p>
+      </div>
+    </section>
+
+    <section class="table-card">
+      <div class="table-header">
+        <h2>Danh sách sinh viên</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Mã SV</th>
+              <th>Họ tên</th>
+              <th>Ngày sinh</th>
+              <th>Lớp</th>
+              <th>GPA</th>
+              <th>Email</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="studentModal" class="modal hidden">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 id="modalTitle">Thêm sinh viên</h2>
+        <button id="closeModal" class="icon-btn" type="button">✕</button>
+      </div>
+
+      <form id="studentForm">
+        <input type="hidden" id="editIndex" value="">
+
+        <label>
+          Mã sinh viên
+          <input type="text" id="studentId" placeholder="SV001">
+        </label>
+
+        <label>
+          Họ và tên
+          <input type="text" id="fullName" placeholder="Nguyễn Văn A">
+        </label>
+
+        <label>
+          Ngày sinh
+          <input type="date" id="birthDate">
+        </label>
+
+        <label>
+          Lớp
+          <input type="text" id="className" placeholder="DHTH01">
+        </label>
+
+        <label>
+          GPA
+          <input type="number" step="0.1" id="gpa" placeholder="3.5">
+        </label>
+
+        <label>
+          Email
+          <input type="email" id="email" placeholder="sv001@example.com">
+        </label>
+
+        <div class="form-actions">
+          <button type="button" id="cancelButton" class="secondary-btn">Hủy</button>
+          <button type="submit" class="primary-btn">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="notification" class="notification hidden"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
