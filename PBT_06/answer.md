@@ -1,13 +1,8 @@
 
-PHIẾU BÀI TẬP 06
-CSS FRAMEWORKS — Bootstrap 5
-Track A — Bootstrap 5
-
-
-PHẦN A — ĐỌC HIỂU (20 điểm)
-
-Câu A1 (10đ) — Grid System
-
+## PHẦN A — ĐỌC HIỂU (20 điểm)
+---
+## Câu A1 (10đ) — Grid System
+## Trả lời
 Phân tích HTML cho sẵn để vẽ layout ở 3 kích thước màn hình. Bốn div đều có cùng bộ class: col-12 col-md-6 col-lg-3. Ta đọc lần lượt từng breakpoint.
 
 Kích thước	< 768px (xs/sm)	768px – 991px (md)	≥ 992px (lg+)
@@ -20,9 +15,9 @@ col-md-6 có nghĩa là: tại breakpoint md (từ 768px trở lên), div này c
 
 Tại sao không cần viết col-sm-12: vì Bootstrap dùng tiếp cận mobile-first. Khi bạn chỉ viết col-12 (không có breakpoint prefix), Bootstrap mặc định áp dụng class đó cho tất cả kích thước từ nhỏ nhất trở lên. col-md-6 sau đó ghi đè cho màn hình md+. Viết thêm col-sm-12 là thừa vì col-12 đã bao phủ toàn bộ phạm vi nhỏ hơn md rồi.
 
-
-Câu A2 (10đ) — Utilities & Components
-
+---
+## Câu A2 (10đ) — Utilities & Components
+## Trả lòi
 1. Giải thích class d-none d-md-block
 Hai class này kết hợp theo nguyên tắc cascade của Bootstrap. d-none đặt display: none cho tất cả kích thước từ nhỏ nhất. d-md-block sau đó ghi đè bằng display: block khi màn hình đạt breakpoint md (từ 768px). Kết quả thực tế:
 •Dưới 768px: element bị ẩn hoàn toàn (không chiếm chỗ trong layout).
