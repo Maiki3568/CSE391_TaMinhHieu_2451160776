@@ -17,13 +17,66 @@ const priorityInput = document.querySelector('#priorityInput');
 let tasks = [];
 let editIndex = -1;
 
+function getDefaultTasks() {
+  return [
+    {
+      title: 'Hoàn thành bài tập HTML',
+      description: 'Nộp phần bài tập tuần này trước 17:00',
+      deadline: '2026-05-25',
+      priority: 'Cao',
+      completed: false
+    },
+    {
+      title: 'Ôn lại JavaScript DOM',
+      description: 'Xem lại phần event listener và DOM manipulation',
+      deadline: '2026-05-26',
+      priority: 'Trung bình',
+      completed: true
+    },
+    {
+      title: 'Làm phiên bản mockup',
+      description: 'Thiết kế giao diện cho dự án cá nhân',
+      deadline: '2026-05-27',
+      priority: 'Thấp',
+      completed: false
+    },
+    {
+      title: 'Gửi báo cáo tiến độ',
+      description: 'Chia sẻ tiến độ với giảng viên',
+      deadline: '2026-05-28',
+      priority: 'Cao',
+      completed: false
+    },
+    {
+      title: 'Chuẩn bị mẫu dữ liệu',
+      description: 'Tiền xử lý dữ liệu cho bài thực hành',
+      deadline: '2026-05-29',
+      priority: 'Trung bình',
+      completed: true
+    }
+  ];
+}
+
 function loadFromLocalStorage() {
   const savedTasks = localStorage.getItem('tasks');
 
-  if (savedTasks) {
+  if (savedTasks === null) {
+    tasks = getDefaultTasks();
+    saveToLocalStorage();
+    return;
+  }
+
+  try {
     tasks = JSON.parse(savedTasks);
-  } else {
-    tasks = [];
+  } catch (error) {
+    tasks = getDefaultTasks();
+    saveToLocalStorage();
+    return;
+  }
+
+  if (tasks === null || tasks.length === 0) {
+    tasks = getDefaultTasks();
+    saveToLocalStorage();
   }
 }
 
