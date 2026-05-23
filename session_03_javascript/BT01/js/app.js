@@ -19,6 +19,51 @@ const LOCAL_STORAGE_KEY = 'student-management-data';
 
 let students = [];
 
+function getDefaultStudents() {
+  return [
+    {
+      studentId: 'SV001',
+      fullName: 'Nguyễn Văn A',
+      birthDate: '2004-02-12',
+      className: 'DHTH01',
+      gpa: '3.8',
+      email: 'a@example.com'
+    },
+    {
+      studentId: 'SV002',
+      fullName: 'Trần Thị B',
+      birthDate: '2003-09-24',
+      className: 'DHTH01',
+      gpa: '3.5',
+      email: 'b@example.com'
+    },
+    {
+      studentId: 'SV003',
+      fullName: 'Lê Minh C',
+      birthDate: '2005-01-05',
+      className: 'DHTH02',
+      gpa: '3.2',
+      email: 'c@example.com'
+    },
+    {
+      studentId: 'SV004',
+      fullName: 'Phạm Quốc D',
+      birthDate: '2002-07-17',
+      className: 'DHTH02',
+      gpa: '3.9',
+      email: 'd@example.com'
+    },
+    {
+      studentId: 'SV005',
+      fullName: 'Hoàng Lan E',
+      birthDate: '2004-12-30',
+      className: 'DHTH03',
+      gpa: '3.6',
+      email: 'e@example.com'
+    }
+  ];
+}
+
 function showNotification(message) {
   notification.textContent = message;
   notification.classList.remove('hidden');
@@ -36,18 +81,22 @@ function loadFromLocalStorage() {
   const savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
 
   if (savedData === null) {
-    students = [];
+    students = getDefaultStudents();
+    saveToLocalStorage();
     return;
   }
 
   try {
     students = JSON.parse(savedData);
   } catch (error) {
-    students = [];
+    students = getDefaultStudents();
+    saveToLocalStorage();
+    return;
   }
 
-  if (students === null) {
-    students = [];
+  if (students === null || students.length === 0) {
+    students = getDefaultStudents();
+    saveToLocalStorage();
   }
 }
 
