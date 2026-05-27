@@ -1,33 +1,49 @@
 
 
-var students = [
-    { name: "An",    math: 8,  physics: 7, cs: 9, gender: "M" },
-    { name: "Binh",  math: 6,  physics: 9, cs: 7, gender: "F" },
-    { name: "Chi",   math: 9,  physics: 6, cs: 8, gender: "F" },
-    { name: "Dung",  math: 5,  physics: 5, cs: 6, gender: "M" },
-    { name: "Em",    math: 10, physics: 8, cs: 9, gender: "F" },
-    { name: "Phong", math: 3,  physics: 4, cs: 5, gender: "M" },
-    { name: "Giang", math: 7,  physics: 7, cs: 7, gender: "F" },
-    { name: "Huy",   math: 4,  physics: 6, cs: 3, gender: "M" },
+const students = [
+    { name: "An", math: 8, physics: 7, cs: 9, gender: "M" },
+    { name: "Binh", math: 6, physics: 9, cs: 7, gender: "F" },
+    { name: "Chi", math: 9, physics: 6, cs: 8, gender: "F" },
+    { name: "Dung", math: 5, physics: 5, cs: 6, gender: "M" },
+    { name: "Em", math: 10, physics: 8, cs: 9, gender: "F" },
+    { name: "Phong", math: 3, physics: 4, cs: 5, gender: "M" },
+    { name: "Giang", math: 7, physics: 7, cs: 7, gender: "F" },
+    { name: "Huy", math: 4, physics: 6, cs: 3, gender: "M" },
 ];
 
 
 
 
+
 function tinhDiemTrungBinh(student) {
-    var tb = student.math * 0.4 + student.physics * 0.3 + student.cs * 0.3;
-    // Làm tròn 1 chữ số thập phân
-    return Math.round(tb * 10) / 10;
+
+    let tb =
+        student.math * 0.4 +
+        student.physics * 0.3 +
+        student.cs * 0.3;
+
+    return tb.toFixed(1);
 }
 
+
+
+
+
 function xepLoai(diemTB) {
+
     if (diemTB >= 8.0) {
         return "Gioi";
-    } else if (diemTB >= 6.5) {
+    }
+
+    else if (diemTB >= 6.5) {
         return "Kha";
-    } else if (diemTB >= 5.0) {
+    }
+
+    else if (diemTB >= 5.0) {
         return "Trung binh";
-    } else {
+    }
+
+    else {
         return "Yeu";
     }
 }
@@ -35,56 +51,83 @@ function xepLoai(diemTB) {
 
 
 
-function inBang(students) {
+
+function inBangKetQua(students) {
+
     console.log("| STT | Ten    | TB   | Xep loai    |");
+
     console.log("|-----|--------|------|-------------|");
 
-    for (var i = 0; i < students.length; i++) {
-        var sv = students[i];
-        var tb = tinhDiemTrungBinh(sv);
-        var loai = xepLoai(tb);
+    for (let i = 0; i < students.length; i++) {
 
-        // Căn chuỗi cho thẳng hàng
-        var stt = String(i + 1).padEnd(3);
-        var ten = sv.name.padEnd(6);
-        var diem = String(tb).padEnd(4);
-        var xep = loai.padEnd(11);
+        let sv = students[i];
 
-        console.log("| " + stt + " | " + ten + " | " + diem + " | " + xep + " |");
+        let tb = tinhDiemTrungBinh(sv);
+
+        let loai = xepLoai(tb);
+
+        console.log(
+            "| " +
+            (i + 1) + "   | " +
+            sv.name.padEnd(6) + " | " +
+            tb.padEnd(4) + " | " +
+            loai.padEnd(11) + " |"
+        );
     }
 }
 
+
 console.log("\nBANG KET QUA:");
-inBang(students);
+
+inBangKetQua(students);
+
+
 
 
 function demXepLoai(students) {
-    var soGioi = 0;
-    var soKha = 0;
-    var soTrungBinh = 0;
-    var soYeu = 0;
 
-    for (var i = 0; i < students.length; i++) {
-        var tb = tinhDiemTrungBinh(students[i]);
-        var loai = xepLoai(tb);
+    let gioi = 0;
+
+    let kha = 0;
+
+    let trungBinh = 0;
+
+    let yeu = 0;
+
+    for (let i = 0; i < students.length; i++) {
+
+        let tb = tinhDiemTrungBinh(students[i]);
+
+        let loai = xepLoai(tb);
 
         if (loai === "Gioi") {
-            soGioi++;
-        } else if (loai === "Kha") {
-            soKha++;
-        } else if (loai === "Trung binh") {
-            soTrungBinh++;
-        } else {
-            soYeu++;
+            gioi++;
+        }
+
+        else if (loai === "Kha") {
+            kha++;
+        }
+
+        else if (loai === "Trung binh") {
+            trungBinh++;
+        }
+
+        else {
+            yeu++;
         }
     }
 
     console.log("\nTHONG KE XEP LOAI:");
-    console.log("Gioi:       " + soGioi + " sinh vien");
-    console.log("Kha:        " + soKha + " sinh vien");
-    console.log("Trung binh: " + soTrungBinh + " sinh vien");
-    console.log("Yeu:        " + soYeu + " sinh vien");
+
+    console.log("Gioi: " + gioi + " sinh vien");
+
+    console.log("Kha: " + kha + " sinh vien");
+
+    console.log("Trung binh: " + trungBinh + " sinh vien");
+
+    console.log("Yeu: " + yeu + " sinh vien");
 }
+
 
 demXepLoai(students);
 
@@ -92,14 +135,21 @@ demXepLoai(students);
 
 
 function timCaoNhatThapNhat(students) {
-    // Bắt đầu bằng sinh viên đầu tiên làm mốc so sánh
-    var caoNhat = students[0];
-    var thapNhat = students[0];
 
-    for (var i = 1; i < students.length; i++) {
-        var tbHienTai = tinhDiemTrungBinh(students[i]);
-        var tbCaoNhat = tinhDiemTrungBinh(caoNhat);
-        var tbThapNhat = tinhDiemTrungBinh(thapNhat);
+    let caoNhat = students[0];
+
+    let thapNhat = students[0];
+
+    for (let i = 1; i < students.length; i++) {
+
+        let tbHienTai =
+            Number(tinhDiemTrungBinh(students[i]));
+
+        let tbCaoNhat =
+            Number(tinhDiemTrungBinh(caoNhat));
+
+        let tbThapNhat =
+            Number(tinhDiemTrungBinh(thapNhat));
 
         if (tbHienTai > tbCaoNhat) {
             caoNhat = students[i];
@@ -110,9 +160,23 @@ function timCaoNhatThapNhat(students) {
         }
     }
 
-    console.log("\nSINH VIEN CAO NHAT: " + caoNhat.name + " - TB: " + tinhDiemTrungBinh(caoNhat));
-    console.log("SINH VIEN THAP NHAT: " + thapNhat.name + " - TB: " + tinhDiemTrungBinh(thapNhat));
+    console.log("\nSINH VIEN CAO NHAT:");
+
+    console.log(
+        caoNhat.name +
+        " - TB: " +
+        tinhDiemTrungBinh(caoNhat)
+    );
+
+    console.log("\nSINH VIEN THAP NHAT:");
+
+    console.log(
+        thapNhat.name +
+        " - TB: " +
+        tinhDiemTrungBinh(thapNhat)
+    );
 }
+
 
 timCaoNhatThapNhat(students);
 
@@ -120,50 +184,91 @@ timCaoNhatThapNhat(students);
 
 
 function tinhTBTungMon(students) {
-    var tongMath = 0;
-    var tongPhysics = 0;
-    var tongCs = 0;
 
-    for (var i = 0; i < students.length; i++) {
-        tongMath = tongMath + students[i].math;
-        tongPhysics = tongPhysics + students[i].physics;
-        tongCs = tongCs + students[i].cs;
+    let tongMath = 0;
+
+    let tongPhysics = 0;
+
+    let tongCs = 0;
+
+    for (let i = 0; i < students.length; i++) {
+
+        tongMath += students[i].math;
+
+        tongPhysics += students[i].physics;
+
+        tongCs += students[i].cs;
     }
 
-    var total = students.length;
+    let total = students.length;
 
-    console.log("\nDIEM TB TOAN LOP TUNG MON:");
-    console.log("Toan:    " + (tongMath / total).toFixed(2));
-    console.log("Ly:      " + (tongPhysics / total).toFixed(2));
-    console.log("CNTT:    " + (tongCs / total).toFixed(2));
+    console.log("\nDIEM TB TUNG MON:");
+
+    console.log(
+        "Math: " +
+        (tongMath / total).toFixed(2)
+    );
+
+    console.log(
+        "Physics: " +
+        (tongPhysics / total).toFixed(2)
+    );
+
+    console.log(
+        "CS: " +
+        (tongCs / total).toFixed(2)
+    );
 }
+
 
 tinhTBTungMon(students);
 
 
 
 
-function tinhTBTheoGioiTinh(students) {
-    var tongNam = 0;
-    var soNam = 0;
-    var tongNu = 0;
-    var soNu = 0;
 
-    for (var i = 0; i < students.length; i++) {
-        var tb = tinhDiemTrungBinh(students[i]);
+function tinhTBTheoGioiTinh(students) {
+
+    let tongNam = 0;
+
+    let tongNu = 0;
+
+    let soNam = 0;
+
+    let soNu = 0;
+
+    for (let i = 0; i < students.length; i++) {
+
+        let tb =
+            Number(tinhDiemTrungBinh(students[i]));
 
         if (students[i].gender === "M") {
-            tongNam = tongNam + tb;
+
+            tongNam += tb;
+
             soNam++;
-        } else {
-            tongNu = tongNu + tb;
+        }
+
+        else {
+
+            tongNu += tb;
+
             soNu++;
         }
     }
 
     console.log("\nDIEM TB THEO GIOI TINH:");
-    console.log("Nam: " + (tongNam / soNam).toFixed(2) + " (" + soNam + " sinh vien)");
-    console.log("Nu:  " + (tongNu / soNu).toFixed(2) + " (" + soNu + " sinh vien)");
+
+    console.log(
+        "Nam: " +
+        (tongNam / soNam).toFixed(2)
+    );
+
+    console.log(
+        "Nu: " +
+        (tongNu / soNu).toFixed(2)
+    );
 }
+
 
 tinhTBTheoGioiTinh(students);
