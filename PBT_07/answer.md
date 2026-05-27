@@ -90,7 +90,7 @@ Kết quả dự đoán: `Trong block: 2` rồi `Ngoài block: 1`
 
 ---
 
-*Tham chiếu: `03_data_types_variables.md`, `02_getting_started.md`*
+*Tham chiếu: `03_data_types_variables.md + ⚠️ Type Coercion — "Tự ý chuyển kiểu+ Type Checking`, `02_getting_started.md + var, let, const — Ba Anh Em Nhưng Tính Cách Khác"` + *
 
 
 ---
@@ -137,7 +137,7 @@ Nói ngắn gọn: `+` là trừ khi có string → nối chuỗi. `-`, `*`, `/`
 
 ---
 
-*Tham chiếu: `03_data_types_variables.md`*
+*Tham chiếu: `03_data_types_variables.md+ruthy & Falsy — "Đúng và Sai ẩn"`*
 
 
 ---
@@ -178,7 +178,7 @@ Từ giờ trở đi nên dùng `===` (strict equality) trong mọi trường h�
 
 ---
 
-*Tham chiếu: `02_getting_started.md`, `03_data_types_variables.md`*
+*Tham chiếu: `02_getting_started.md+ Operators — Toán tử So sánh (⚠️ Cẩn thận!)`, `03_data_types_variables.md`*
 
 
 ---
@@ -229,7 +229,7 @@ if (" ") console.log("H");    // In ra "H"
 
 ---
 
-*Tham chiếu: `03_data_types_variables.md`*
+*Tham chiếu: `03_data_types_variables.md +🔍 Truthy & Falsy — "Đúng và Sai ẩn`*
 
 
 ---
@@ -285,7 +285,7 @@ Template literal dùng backtick (`) thay vì nháy đơn hoặc đôi. Bên tron
 
 ---
 
-*Tham chiếu: `02_getting_started.md`*
+*Tham chiếu: `02_getting_started.md + Template Literals — "String nâng cao`*
 
 
 ---
@@ -501,7 +501,7 @@ var thanhToan = tongSauGiam + vat + tip;
 
 ### Kết quả chạy thử
 
-Chạy `node restaurant_bill.js` với dữ liệu mẫu (Phở bò x2, Trà đá x3, Bún chả x1):
+Chạy `restaurant_bill.js` với dữ liệu mẫu (Phở bò x2, Trà đá x3, Bún chả x1):
 
 ```
 ╔══════════════════════════════════════╗
@@ -522,4 +522,4 @@ Chạy `node restaurant_bill.js` với dữ liệu mẫu (Phở bò x2, Trà đ�
 
 ---
 
-*Tham chiếu: `04_control_structures.md`, `03_data_types_variables.md`*
+*Tham chiếu: `04_control_structures.md + Array Methods — "Loop hiện đại" (dùng NHIỀU NHẤT!)`, `03_data_types_variables.md`*
