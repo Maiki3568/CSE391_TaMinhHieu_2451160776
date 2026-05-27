@@ -1,5 +1,4 @@
-// Câu C2 — Tính hóa đơn nhà hàng
-// Chạy: node restaurant_bill.js
+
 
 var danhSachMon = [
     { ten: "Pho bo",   gia: 65000, soLuong: 2 },
@@ -7,12 +6,8 @@ var danhSachMon = [
     { ten: "Bun cha",  gia: 55000, soLuong: 1 },
 ];
 
-var coTip = true;  // Có tip hay không
+var coTip = true;  
 
-
-// ==============================================
-// Tính tổng tiền gốc
-// ==============================================
 
 function tinhTongTien(danhSach) {
     var tong = 0;
