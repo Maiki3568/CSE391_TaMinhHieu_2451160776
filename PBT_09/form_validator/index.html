@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="formCard">
+            <h1>Đăng ký tài khoản</h1>
+            <div class="field-group">
+                <label for="nameInput">Họ và tên</label>
+                <div class="input-wrap">
+                    <input id="nameInput" type="text" placeholder="Nguyễn Văn A">
+                    <span class="field-icon" id="nameIcon"></span>
+                </div>
+                <span class="field-msg" id="nameMsg"></span>
+            </div>
+            <div class="field-group">
+                <label for="emailInput">Email</label>
+                <div class="input-wrap">
+                    <input id="emailInput" type="text" placeholder="example@email.com">
+                    <span class="field-icon" id="emailIcon"></span>
+                </div>
+                <span class="field-msg" id="emailMsg"></span>
+            </div>
+            <div class="field-group">
+                <label for="passwordInput">Mật khẩu</label>
+                <div class="input-wrap">
+                    <input id="passwordInput" type="password" placeholder="Nhập mật khẩu">
+                    <span class="field-icon" id="passwordIcon"></span>
+                </div>
+                <div id="strengthBar">
+                    <div id="strengthFill"></div>
+                </div>
+                <span class="field-msg" id="passwordMsg"></span>
+            </div>
+            <div class="field-group">
+                <label for="confirmInput">Xác nhận mật khẩu</label>
+                <div class="input-wrap">
+                    <input id="confirmInput" type="password" placeholder="Nhập lại mật khẩu">
+                    <span class="field-icon" id="confirmIcon"></span>
+                </div>
+                <span class="field-msg" id="confirmMsg"></span>
+            </div>
+            <div class="field-group">
+                <label for="phoneInput">Số điện thoại</label>
+                <div class="input-wrap">
+                    <input id="phoneInput" type="text" placeholder="0901-234-567" maxlength="12">
+                    <span class="field-icon" id="phoneIcon"></span>
+                </div>
+                <span class="field-msg" id="phoneMsg"></span>
+            </div>
+            <button id="submitBtn" disabled>Đăng ký</button>
+        </div>
+    </div>
+
+    <div id="successModal" class="hidden">
+        <div id="successOverlay"></div>
+        <div id="successContent">
+            <div id="successIcon">✅</div>
+            <h2>Đăng ký thành công!</h2>
+            <div id="successInfo"></div>
+            <button id="closeSuccess">Đóng</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
