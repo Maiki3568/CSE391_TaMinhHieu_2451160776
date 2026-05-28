@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="appHeader">
+        <span id="appTitle">KeyboardJS App</span>
+        <span id="shortcutHint">Ctrl+K để mở Command Palette</span>
+    </header>
+
+    <main>
+        <section id="gallerySection" aria-label="Photo Gallery">
+            <h2>Gallery</h2>
+            <p class="hint">← → chuyển ảnh &nbsp;|&nbsp; 1–9 nhảy đến ảnh &nbsp;|&nbsp; Space play/pause &nbsp;|&nbsp; Click ảnh mở modal</p>
+            <div id="galleryTrack">
+                <button id="prevBtn" aria-label="Ảnh trước">&#8592;</button>
+                <div id="galleryFrame">
+                    <img id="galleryImg" src="" alt="" aria-label="Ảnh hiện tại">
+                    <div id="galleryCaption"></div>
+                    <div id="galleryCounter"></div>
+                </div>
+                <button id="nextBtn" aria-label="Ảnh tiếp theo">&#8594;</button>
+            </div>
+            <div id="thumbnails" role="list" aria-label="Danh sách ảnh thu nhỏ"></div>
+            <div id="slideshowStatus" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <div id="lightboxModal" class="hidden" role="dialog" aria-modal="true" aria-label="Xem ảnh lớn">
+        <div id="lightboxOverlay"></div>
+        <div id="lightboxContent">
+            <button id="lightboxClose" aria-label="Đóng">✕</button>
+            <img id="lightboxImg" src="" alt="">
+            <div id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <div id="commandPalette" class="hidden" role="dialog" aria-modal="true" aria-label="Command Palette">
+        <div id="paletteOverlay"></div>
+        <div id="paletteBox">
+            <input id="paletteInput" type="text" placeholder="Tìm lệnh..." autocomplete="off" aria-label="Tìm kiếm lệnh">
+            <ul id="commandList" role="listbox" aria-label="Danh sách lệnh"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
